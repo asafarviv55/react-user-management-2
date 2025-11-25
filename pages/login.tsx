@@ -25,7 +25,7 @@ const Login: React.FC = () => {
       return;
     }
     try {
-      const response = await axios.post('http://localhost:3000/api/auth/login', { email, password });
+      const response = await axios.post(`${process.env.NEXT_PUBLIC_API_URL}/api/auth/login`, { email, password });
       console.log('Login successful');
     } catch (error :any) {
       if (error.response) {

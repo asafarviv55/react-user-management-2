@@ -35,7 +35,7 @@ const SignupPage: React.FC = () => {
     }
     try {
       // Make a POST request to the backend API endpoint for signup
-      const response = await fetch('http://localhost:3001/api/auth/signup', {
+      const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/auth/signup`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -68,8 +68,8 @@ const SignupPage: React.FC = () => {
                 <input type="email" id="email" value={email} onChange={handleEmailChange} required/>
                 <label htmlFor="password">Password:</label>
                 <input type="password" id="password" value={password} onChange={handlePasswordChange} required/>
-                <label htmlFor="password">Role ID:</label>
-                <input type="select" id="password" value={password} onChange={handlePasswordChange} required/>
+                <label htmlFor="roleId">Role ID:</label>
+                <input type="text" id="roleId" value={roleId} onChange={handleUserRoleId} required/>
           </div>
         <button type="submit">Sign Up</button>
       </form>
